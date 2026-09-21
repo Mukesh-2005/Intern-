@@ -1,7 +1,7 @@
 
 
 body {
-  background-color: #D9A441;
+  background-color: #6360d0;
   color: #222222;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -25,4 +25,48 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding : 20px;
+  background-color: #444;
+  overflow: hidden;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.hero button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6360d0;
+  color: white;
+  cursor: pointer;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
 }
