@@ -70,3 +70,11 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+    
+  }
+}
+
