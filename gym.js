@@ -29,13 +29,6 @@ let doubled = numbers.map(function(num) {
 });
 console.log("Doubled Numbers:", doubled);
 
-let Button = document.getElementById("myButton");
-let output = document.getElementById("output");
-
-Button.addEventListener("click", function() {
-    output.textContent = "Button Clicked!";
-});
-
 let input = document.getElementById("trainer-input");
 let addButton = document.getElementById("add-trainer-btn");
 
@@ -47,4 +40,43 @@ addButton.addEventListener("click", function() {
   trainerList.appendChild(li);
 
   input.value = "";
+});
+
+let form = document.getElementById("contact-form");
+let nameInput = document.getElementById("contact-name");
+let emailInput = document.getElementById("contact-email");
+let message = document.getElementById("form-message");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();  
+
+  if (nameInput.value === "") {
+    message.textContent = "Please enter your name.";
+  } else if (!emailInput.value.includes("@")) {
+    message.textContent = "Please enter a valid email.";
+  } else {
+    message.textContent = "Thanks! We'll contact you soon.";
+  }
+});
+
+let learnButtons = document.querySelectorAll(".card button");
+
+learnButtons.forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    let info = btn.nextElementSibling;
+    info.classList.toggle("hidden");
+  });
+});
+
+
+let modal = document.getElementById("join-modal");
+let joinButton = document.querySelector(".join-btn");
+let closeButton = document.getElementById("close-modal");
+
+joinButton.addEventListener("click", function() {
+  modal.classList.remove("hidden");   
+});
+
+closeButton.addEventListener("click", function() {
+  modal.classList.add("hidden");   
 });

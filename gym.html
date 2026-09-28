@@ -28,6 +28,20 @@
       <button type="button">Get Started</button>
     </section>
 
+     <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contact-form" novalidate>
+      <label for="contact-name">Name:</label>
+      <input type="text" id="contact-name"><br><br>
+
+      <label for="contact-email">Email:</label>
+      <input type="email" id="contact-email"><br><br>
+
+      <p id="form-message"></p>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
     <section id="trainers-section">
   <h2>Our Trainers</h2>
   <ul id="trainer-list"></ul>
@@ -36,28 +50,36 @@
   <button id="add-trainer-btn" type="button">Add Trainer</button>
 </section>
 
-    <div class="card-grid">
+<div id="join-modal" class="modal hidden">
+  <div class="modal-box">
+    <h2>Join IronCore Gym</h2>
+    <p>Leave your name and we'll get your free trial set up.</p>
+    <input type="text" placeholder="Your name">
+    <br><br>
+    <button type="button" id="close-modal">Close</button>
+  </div>
+</div>
+
+        <div class="card-grid">
       <div class="card">
         <h3>Personal Training</h3>
         <p>One-on-one sessions with our certified trainers to help you achieve your fitness goals.</p>
         <button type="button">Learn More</button>
+        <p class="more-info hidden">Sessions are 60 minutes. Includes a custom workout plan and a monthly progress check.</p>
       </div>
       <div class="card">
         <h3>Group Classes</h3>
         <p>HIIT, Yoga, and strength training classes for all fitness levels.</p>
         <button type="button">Learn More</button>
+        <p class="more-info hidden">Classes run 45 minutes, up to 15 people per session, all levels welcome.</p>
       </div>
       <div class="card">
         <h3>Open Gym</h3>
         <p>Full equipment access, 6am to 11pm, every day.</p>
         <button type="button">Learn More</button>
+        <p class="more-info hidden">Includes cardio, free weights and lockers. No booking needed.</p>
       </div>
     </div>
-
-    <!-- New: today's DOM practice section -->
-    <button id="myButton">Click Me</button>
-    <p id="output"></p>
-  </main>
 
   <footer>
     <p><strong>IronCore Gym</strong></p>
