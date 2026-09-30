@@ -80,3 +80,20 @@ joinButton.addEventListener("click", function() {
 closeButton.addEventListener("click", function() {
   modal.classList.add("hidden");   
 });
+
+
+let quoteText = document.getElementById("quote-text");
+let newQuoteBtn = document.getElementById("new-quote-btn");
+
+async function getQuote() {
+  try {
+    let response = await fetch("https://dummyjson.com/quotes/random");
+    let data = await response.json();
+    quoteText.textContent = data.quote;
+  } catch (error) {
+    quoteText.textContent = "Couldn't load a quote right now.";
+  }
+}
+
+newQuoteBtn.addEventListener("click", getQuote);
+getQuote(); 
