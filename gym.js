@@ -97,3 +97,34 @@ async function getQuote() {
 
 newQuoteBtn.addEventListener("click", getQuote);
 getQuote(); 
+
+
+let products = [
+  { id: 1, name: "Protein Shaker", price: 299, description: "600ml leak-proof shaker with mixing ball." },
+  { id: 2, name: "Resistance Bands Set", price: 499, description: "5 bands of varying resistance, with a carry pouch." },
+  { id: 3, name: "Gym Gloves", price: 399, description: "Padded palm gloves for weightlifting." },
+  { id: 4, name: "Yoga Mat", price: 799, description: "6mm thick, non-slip, includes carry strap." },
+  { id: 5, name: "Water Bottle", price: 249, description: "1L insulated stainless steel bottle." }
+];
+
+
+let productList = document.getElementById("product-list");
+let productDetail = document.getElementById("product-detail");
+
+function renderProducts(productArray) {
+  productList.innerHTML = "";
+
+  productArray.forEach(function(product) {
+    let div = document.createElement("div");
+    div.textContent = product.name + " - ₹" + product.price;
+    div.addEventListener("click", function() {
+      productDetail.innerHTML = `<h3>${product.name}</h3>
+        <p>Price: ₹${product.price}</p>
+        <p>Description: ${product.description}</p>`;
+      productDetail.classList.remove("hidden");
+    });
+    productList.appendChild(div);
+  });
+}
+
+renderProducts(products);
